@@ -1,0 +1,19 @@
+kind: pipeline
+name: default
+
+platform:
+  os: linux
+  arch: arm64
+
+workspace:
+  base: /go
+  path: src/github.com/containerd/containerd
+
+steps:
+- name: build
+  image: golang:1.10.3
+  commands:
+  - apt-get update
+  - apt-get install -y btrfs-tools libseccomp-dev
+  - make
+  - make test
