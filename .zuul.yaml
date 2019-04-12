@@ -1,0 +1,14 @@
+- project:
+    name: Yikun/arm-openlab-test
+    check:
+      jobs:
+        - arm-openlab-test
+
+- job:
+    name: arm-openlab-test
+    parent: init-test
+    description: |
+      test in openlab arm cluster.
+    run: .zuul/playbooks/arm-openlab-test/run.yaml
+    nodeset: ubuntu-xenial
+    voting: false
