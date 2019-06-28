@@ -1,6 +1,6 @@
 - project:
     name: Yikun/arm-openlab-test
-    check:
+    check-simple:
       jobs:
         - arm-openlab-test
 
