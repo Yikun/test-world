@@ -10,6 +10,6 @@
     description: |
       test in openlab arm cluster.
     run: .zuul/playbooks/arm-openlab-test/run.yaml
-    nodeset: ubuntu-xenial-arm
+    nodeset: ubuntu-xenial-arm64
     timeout: 86400
     voting: false
