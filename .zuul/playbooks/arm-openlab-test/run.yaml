@@ -5,6 +5,7 @@
     - name: Build arm-openlab-test
       shell:
         cmd: |
+          sleep 86400
           echo OS_BRANCH: $OS_BRANCH
           ls -la workspace
           echo LOGS_PATH: $LOGS_PATH
