@@ -12,3 +12,4 @@
           set -ex
           echo $JAVE_HOME
         executable: /bin/bash
+      environment: '{{ global_env }}'
