@@ -1,19 +1,14 @@
 - hosts: all
   become: yes
-
+  roles:
+    - role: install-openjdk
+      java_version: '8'
+    - role: install-maven
+      maven_version: '3.2.5'
   tasks:
     - name: Build arm-openlab-test
       shell:
         cmd: |
-          sleep 86400
-          echo OS_BRANCH: $OS_BRANCH
-          ls -la workspace
-          echo LOGS_PATH: $LOGS_PATH
-          ls -la $LOGS_PATH
-          echo RESULTS_PATH: $RESULTS_PATH
-          ls -la $RESULTS_PATH
-
-          echo globalenv: '{{ global_env.LOGS_PATH }}'
-
-          exit 1
+          set -ex
+          echo $JAVE_HOME
         executable: /bin/bash
