@@ -11,7 +11,7 @@
           cd envoy
           # last success commit
           # git reset --hard 79c165f2d9d29e5af3f93f2baa51f1b29b2cdefe
-          git reset --hard 14dd85d969325bb76feb85035a1668c6cbd8f6e2
+          # git reset --hard 14dd85d969325bb76feb85035a1668c6cbd8f6e2
           set -x
           echo $JAVA_HOME
           bazel version
