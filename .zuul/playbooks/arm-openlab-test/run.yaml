@@ -1,15 +1,27 @@
 - hosts: all
   become: yes
   roles:
-    - role: install-openjdk
-      java_version: '8'
-    - role: install-maven
-      maven_version: '3.2.5'
+    - role: config-gcc
+      gcc_version: 7
   tasks:
     - name: Build arm-openlab-test
       shell:
         cmd: |
           set -ex
           echo $JAVA_HOME
+          bazel version
+          apt update
+          apt-get update
+          apt-get install -y \
+             libtool \
+             cmake \
+             automake \
+             autoconf \
+             make \
+             ninja-build \
+             curl \
+             unzip \
+             virtualenv
+          bazel build //source/exe:envoy-static
         executable: /bin/bash
       environment: '{{ global_env }}'
