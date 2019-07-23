@@ -28,6 +28,5 @@
              unzip \
              virtualenv
           bazel build //source/exe:envoy-static
-          sleep 86400
         executable: /bin/bash
       environment: '{{ global_env }}'
