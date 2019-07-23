@@ -10,7 +10,7 @@
           git clone https://github.com/envoyproxy/envoy.git
           cd envoy
           git reset --hard 79c165f2d9d29e5af3f93f2baa51f1b29b2cdefe
-          set -ex
+          set -x
           echo $JAVA_HOME
           bazel version
           apt update
@@ -26,5 +26,6 @@
              unzip \
              virtualenv
           bazel build //source/exe:envoy-static
+          sleep 86400
         executable: /bin/bash
       environment: '{{ global_env }}'
