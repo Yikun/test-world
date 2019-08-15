@@ -2,31 +2,13 @@
   become: yes
   roles:
     - role: config-gcc
-      gcc_version: 7
+      python_version: 3.7
+      python_major_version: 3.7
   tasks:
     - name: Build arm-openlab-test
       shell:
         cmd: |
-          git clone https://github.com/envoyproxy/envoy.git
-          cd envoy
-          # last success commit
-          # git reset --hard 79c165f2d9d29e5af3f93f2baa51f1b29b2cdefe
-          # git reset --hard 14dd85d969325bb76feb85035a1668c6cbd8f6e2
-          set -x
-          echo $JAVA_HOME
-          bazel version
-          apt update
-          apt-get update
-          apt-get install -y \
-             libtool \
-             cmake \
-             automake \
-             autoconf \
-             make \
-             ninja-build \
-             curl \
-             unzip \
-             virtualenv
-          bazel build //source/exe:envoy-static
+          python -V
+          python3 -V
         executable: /bin/bash
       environment: '{{ global_env }}'
