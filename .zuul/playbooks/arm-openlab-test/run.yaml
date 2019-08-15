@@ -1,7 +1,7 @@
 - hosts: all
   become: yes
   roles:
-    - role: config-gcc
+    - role: config-python
       python_version: 3.7
       python_major_version: 3.7
   tasks:
