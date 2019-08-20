@@ -9,5 +9,6 @@
         cmd: |
           python -V
           python3 -V
+          uname -a
         executable: /bin/bash
       environment: '{{ global_env }}'
