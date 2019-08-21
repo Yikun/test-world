@@ -1,14 +1,13 @@
 - hosts: all
   become: yes
   roles:
-    - role: config-python
-      python_version: 3.7
+    - role: config-bazel
+      bazel_version: 0.28.1
   tasks:
     - name: Build arm-openlab-test
       shell:
         cmd: |
-          python -V
-          python3 -V
           uname -a
+          bazel version
         executable: /bin/bash
       environment: '{{ global_env }}'
