@@ -7,7 +7,7 @@ addons:
     - node1
 
 script:
-  - sudo fallocate -l 4G /var/swap
+  - sudo fallocate -l 4G /swapfile.img
   - sudo chmod 0600 /swapfile.img
   - sudo mkswap /swapfile.img
   - sudo swapon /swapfile.img
