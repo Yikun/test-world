@@ -7,7 +7,7 @@ addons:
     - node1
 
 script:
-  - sudo dd if=/dev/zero of=/swapfile.img bs=4096 count=1M
+  - sudo fallocate -l 4G /var/swap
   - sudo chmod 0600 /swapfile.img
   - sudo mkswap /swapfile.img
   - sudo swapon /swapfile.img
