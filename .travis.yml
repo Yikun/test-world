@@ -7,7 +7,8 @@ addons:
     - node1
 
 script:
-  - sudo fallocate -l 4G /swapfile.img
+  - df -hT
+  - swapon test aarch64 and x86 in travis
   - sudo chmod 0600 /swapfile.img
   - sudo mkswap /swapfile.img
   - sudo swapon /swapfile.img
