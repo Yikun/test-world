@@ -1,0 +1,13 @@
+arch:
+  - arm64
+  - amd64
+
+addons:
+  hosts:
+    - node1
+
+script:
+  - sudo dd if=/dev/zero of=/swapfile.img bs=4096 count=1M
+  - sudo chmod 0600 /swapfile.img
+  - sudo mkswap /swapfile.img
+  - sudo swapon /swapfile.img
