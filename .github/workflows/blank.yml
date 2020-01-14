@@ -1,4 +1,4 @@
-name: CI
+name: Gitee sync test periodic job
 
 on:
   push:
@@ -26,3 +26,5 @@ jobs:
         echo test, and deploy your project.
         ls -l ~/.ssh
         ssh -T git@gitee.com
+        chmod +x ./tools/gitee_repo_sync.sh
+        ./tools/gitee_repo_sync.sh
