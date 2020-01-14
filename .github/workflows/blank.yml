@@ -1,0 +1,28 @@
+name: CI
+
+on:
+  push:
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    - cron:  '0 1 * * *'
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Install SSH key
+      uses: shimataro/ssh-key-action@v1
+      with:
+        private-key: ${{ secrets.gitee_key }}
+        public-key: ${{ secrets.gitee_key_pub }}
+        known-hosts: ${{ secrets.gitee_known_host }}
+    - uses: actions/checkout@v1
+    - name: Run a multi-line script
+      run: |
+        ls -la
+        echo Add other actions to build,
+        echo test, and deploy your project.
+        ls -l ~/.ssh
+        ssh -T git@gitee.com
