@@ -17,7 +17,7 @@ jobs:
       with:
         private-key: ${{ secrets.gitee_key }}
         public-key: ${{ secrets.gitee_key_pub }}
-        known-hosts: gitee_known_host
+        known-hosts: ${{ secrets.gitee_known_host }}
     - uses: actions/checkout@v1
     - name: Run a multi-line script
       run: |
