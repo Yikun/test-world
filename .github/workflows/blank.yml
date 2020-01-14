@@ -16,10 +16,12 @@ jobs:
       uses: shimataro/ssh-key-action@v1
       with:
         private-key: ${{ secrets.gitee_key }}
+        public-key: ${{ secrets.gitee_key_pub }}
     - uses: actions/checkout@v1
     - name: Run a multi-line script
       run: |
         ls -la
         echo Add other actions to build,
         echo test, and deploy your project.
+        ls -l ~/.ssh
         ssh -T git@gitee.com
