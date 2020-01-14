@@ -12,10 +12,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Install SSH key
+      uses: shimataro/ssh-key-action@v1
+      with:
+        private-key: ${{ secrets.gitee_key }}
     - uses: actions/checkout@v1
     - name: Run a multi-line script
-      env:
-        super_secret: ${{ secrets.gitee_key }}
       run: |
         ls -la
         echo Add other actions to build,
