@@ -3,7 +3,7 @@ name: Gitee sync test periodic job
 on:
   push:
   schedule:
-    # * is a special character in YAML so you have to quote this string
+    # Excute at every 9:00am Beijing time
     - cron:  '0 1 * * *'
 
 jobs:
@@ -22,9 +22,8 @@ jobs:
     - name: Run a multi-line script
       run: |
         ls -la
-        echo Add other actions to build,
-        echo test, and deploy your project.
-        ls -l ~/.ssh
+        # ssh test to validate the ssh key installation
         ssh -T git@gitee.com
         chmod +x ./tools/gitee_repo_sync.sh
+        # Do sync!
         ./tools/gitee_repo_sync.sh
