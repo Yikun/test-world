@@ -19,7 +19,7 @@ jobs:
         public-key: ${{ secrets.gitee_key_pub }}
         known-hosts: ${{ secrets.gitee_known_host }}
     - uses: actions/checkout@v1
-    - name: Run a multi-line script
+    - name: Sync Github github/kunpengcompute to gitee/kunpengcompute
       run: |
         ls -la
         # ssh test to validate the ssh key installation
