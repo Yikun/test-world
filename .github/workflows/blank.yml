@@ -1,30 +1,17 @@
 name: Gitee sync test periodic job
 
-# on:
-#   push:
-#   schedule:
-#     # Excute at every 9:00am Beijing time
-#     - cron:  '0 1 * * *'
+on: [push, pull_request]
 
 jobs:
   build:
-
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     steps:
-    - name: Install SSH key
-      uses: shimataro/ssh-key-action@v1
-      with:
-        private-key: ${{ secrets.gitee_key }}
-        public-key: ${{ secrets.gitee_key_pub }}
-        known-hosts: ${{ secrets.gitee_known_host }}
-    - uses: actions/checkout@v1
-    - name: Sync Github github/kunpengcompute to gitee/kunpengcompute
+    - name: Test 
       run: |
         pwd
         ls -la
-        # ssh test to validate the ssh key installation
-        ssh -T git@gitee.com
-        chmod +x ./tools/gitee_repo_sync.sh
-        # Do sync!
-        ./tools/gitee_repo_sync.sh
+        lscpu
+        cat /etc/issue
+        uname -a
+  
