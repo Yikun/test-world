@@ -1,0 +1,17 @@
+name: Test run some script in Kunpeng vm
+
+on: [pull_request]
+
+jobs:
+  build:
+    runs-on: self-hosted
+
+    steps:
+    - name: Test 
+      run: |
+        pwd
+        ls -la
+        lscpu
+        cat /etc/issue
+        cat /proc/cpuinfo
+        uname -a
