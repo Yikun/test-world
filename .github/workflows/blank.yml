@@ -1,10 +1,10 @@
 name: Gitee sync test periodic job
 
-on:
-  push:
-  schedule:
-    # Excute at every 9:00am Beijing time
-    - cron:  '0 1 * * *'
+# on:
+#   push:
+#   schedule:
+#     # Excute at every 9:00am Beijing time
+#     - cron:  '0 1 * * *'
 
 jobs:
   build:
