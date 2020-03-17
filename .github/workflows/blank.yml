@@ -24,4 +24,4 @@ jobs:
         pwd
         sudo mkdir -p /hub-mirror-action
         cd /hub-mirror-action
-        echo "test" > test.txt
+        sudo echo "test" > test.txt
