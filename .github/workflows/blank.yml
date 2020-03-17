@@ -23,6 +23,9 @@ jobs:
       run: |
         pwd
         sudo mkdir -p /hub-mirror-action
+        ls -la /
         cd /hub-mirror-action
-        sudo touch test.txt
-        sudo echo "test" > test.txt
+        sudo chown -R $(whoami):$(id -ng) /hub-mirror-action
+        ls -la /
+        touch test.txt
+        echo "test" > test.txt
