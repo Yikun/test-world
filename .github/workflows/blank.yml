@@ -16,13 +16,11 @@ jobs:
       uses: actions/cache@v1
       id: cache
       with:
-        path: /hub-mirror-action
-        key: ${{ runner.os }}-hub-kunpeng2
+        path: /test-cache
+        key: ${{ runner.os }}-test-cache
 
-    - name: Sync Github github/kunpengcompute to gitee/kunpengcompute
+    - name: Prepare the cache
       run: |
-        pwd
-        sudo mkdir -p /hub-mirror-action
-        sudo chown -R $(whoami):$(id -ng) /hub-mirror-action
-
+        sudo mkdir -p /test-cache
+        sudo chown -R $(whoami):$(id -ng) /test-cache
 
