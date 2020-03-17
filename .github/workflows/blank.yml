@@ -16,13 +16,13 @@ jobs:
       uses: actions/cache@v1
       id: cache
       with:
-        path: /hub-mirror-action1
+        path: /hub-mirror-action
         key: ${{ runner.os }}-hub-kunpeng2
 
     - name: Sync Github github/kunpengcompute to gitee/kunpengcompute
       run: |
         pwd
-        mkdir -p /hub-mirror-action1
-        chown -R $(whoami):$(id -ng) /hub-mirror-action1
+        sudo mkdir -p /hub-mirror-action
+        sudo chown -R $(whoami):$(id -ng) /hub-mirror-action
 
 
