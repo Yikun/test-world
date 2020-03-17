@@ -16,11 +16,11 @@ jobs:
       uses: actions/cache@v1
       id: cache
       with:
-        path: /test-cache
-        key: ${{ runner.os }}-test-cache
+        path: /test-cache-failed
+        key: ${{ runner.os }}-test-cache-failed
 
     - name: Prepare the cache
       run: |
-        sudo mkdir -p /test-cache
-        sudo chown -R $(whoami):$(id -ng) /test-cache
+        sudo mkdir -p /test-cache-failed
+
 
